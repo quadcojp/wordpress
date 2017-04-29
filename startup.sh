@@ -9,7 +9,7 @@ function install-cli () {
 }
 
 # download wordpress
-if [ ! -z `find ${DOCROOT} -maxdepth 0 -type d -empty` ]; then
+if [ ! -e ${DOCROOT}/index.php ]; then
   [ `which wp-cli` ]|| install-cli
   wp-cli --allow-root core download --locale=${WP_LOCALE} --path=${DOCROOT}
 fi
