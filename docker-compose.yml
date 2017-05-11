@@ -9,6 +9,8 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress!
       MYSQL_HOST: ""
+    ports:
+      - "13306:3306"
     volumes:
       - ./dbdata:/var/lib/mysql
 
