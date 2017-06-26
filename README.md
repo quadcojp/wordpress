@@ -15,5 +15,6 @@ The Wordpress environment which is made by Docker-compose
 
 ### Activation manner
 ```
-docker-compose up -d
+git clone https://github.com/quadcojp/wordpress.git
+wordpress/init.sh
 ```
