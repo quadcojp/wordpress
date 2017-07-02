@@ -5,9 +5,9 @@ services:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: password!
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress!
+      MYSQL_DATABASE: kaikei
+      MYSQL_USER: smrj
+      MYSQL_PASSWORD: kaikei2017
       MYSQL_HOST: ""
     ports:
       - "13306:3306"
@@ -15,14 +15,14 @@ services:
       - ./dbdata:/var/lib/mysql
 
   web:
-    image: kunitaya/apache24_php71:latest
+    image: kunitaya/apache24_php70:latest
     environment:
       DOCROOT: /var/www/html
       WP_LOCALE: ja
       CREATE_CONF: 0
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress!
+      MYSQL_DATABASE: kaikei
+      MYSQL_USER: smrj
+      MYSQL_PASSWORD: kaikei2017
       MYSQL_HOST: db
     ports:
       - "10080:80"
