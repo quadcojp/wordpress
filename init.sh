@@ -48,7 +48,7 @@ while :; do
 done
 
 # 2. Read docker-compose.yml
-YML_FILE=$REPO_DIR/docker-compose.yml~
+YML_FILE="$REPO_DIR/docker-compose.yml~"
 cp -p $REPO_DIR/docker-compose.yml $YML_FILE
 eval $(parse_yaml $YML_FILE)
 
@@ -97,7 +97,7 @@ done
 
 ## 3.4. Enter mysql password
 while :; do
-    echo -n "Enter mysql user name [$services_db_environment_MYSQL_PASSWORD]: "
+    echo -n "Enter $MYSQL_USER password [$services_db_environment_MYSQL_PASSWORD]: "
     read MYSQL_PASSWORD
 
     [ "$MYSQL_PASSWORD" == "" ]&& break
