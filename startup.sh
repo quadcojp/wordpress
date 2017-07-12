@@ -28,4 +28,4 @@ fi
 chown -R apache. ${DOCROOT}
 
 # start httpd
-/usr/sbin/apachectl -D FOREGROUND
+/usr/sbin/httpd -DFOREGROUND
