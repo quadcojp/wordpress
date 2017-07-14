@@ -168,6 +168,6 @@ while :; do
 done
 
 echo "Completed!"
-echo "Run: cd ../$REPOSITORY_NAME && docker-compose up -d"
+echo "Run: cd $REPOSITORY_NAME && docker-compose up -d"
 
 exit 0
