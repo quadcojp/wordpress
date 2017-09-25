@@ -15,24 +15,12 @@ services:
       - ./dbdata:/var/lib/mysql
 
   web:
-    image: kunitaya/apache24_php71:latest
-    environment:
-      DOCROOT: /var/www/html
-      WP_LOCALE: ja
-      CREATE_CONF: 0
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress!
-      MYSQL_HOST: db
+    build: ./docker
+    hostname: wordpress.local
+    privileged: true
     ports:
-      - "10080:80"
-      - "10443:443"
+      - "8080:80"
     depends_on:
       - db
     volumes:
-      - ./startup.sh:/root/startup.sh
-      - ./httpd.conf:/etc/httpd/conf/httpd.conf
-      - ./httpd_conf.d:/etc/httpd/conf.d
-      - ./php.ini:/etc/php.ini
       - ./htdocs:/var/www/html
-    command: [bash, /root/startup.sh]

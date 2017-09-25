@@ -1,0 +1,4 @@
+.include /lib/systemd/system/httpd.service
+[Service]
+UMask=002
+ExecStartPre=/usr/local/bin/install-wordpress.sh
